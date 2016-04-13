@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Studiebarometer</string>
+    <string name="naam">Naam</string>
+    <string name="studentnummer">Studentnummer</string>
+    <string name="action_gegevens">Mijn gegevens</string>
+    <string name="title_activity_vakken">Vakken</string>
+    <string name="title_activity_resultaten">Resultaten</string>
+    <string name="title_activity_gegevens">Mijn gegevens</string>
+</resources>
