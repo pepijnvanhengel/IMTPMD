@@ -6,4 +6,5 @@
     <string name="title_activity_vakken">Vakken</string>
     <string name="title_activity_resultaten">Resultaten</string>
     <string name="title_activity_gegevens">Mijn gegevens</string>
+    <string name="title_course_list_activity"> Course List </string>
 </resources>
