@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -40,12 +42,13 @@ public class VakkenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vakken);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         requestSubjects();
 
-
-
-
+        //terug naar vorige activity
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     // ALLES WAT JE NODGI HEBT OM EEN REQUEST TE MAKEN
     private void requestSubjects(){
@@ -61,12 +64,8 @@ public class VakkenActivity extends AppCompatActivity {
         }
         );
         VolleyHelper.getInstance(this).addToRequestQueue(request);
-
-
-
-
-
     }
+
 
 
 
@@ -115,5 +114,17 @@ public class VakkenActivity extends AppCompatActivity {
 
     }
 
+    //terug naar vorige activity
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
 
