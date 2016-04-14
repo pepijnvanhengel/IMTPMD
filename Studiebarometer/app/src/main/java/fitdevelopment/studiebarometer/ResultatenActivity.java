@@ -52,21 +52,6 @@ public class ResultatenActivity extends AppCompatActivity {
         mChart.setTransparentCircleColor(Color.rgb(130, 130, 130));
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
 
-
-
-
-        /*Button fab = (Button) findViewById(R.id.plusTweeTest);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (currentEcts < MAX_ECTS) {
-                    setData(currentEcts += 2);
-                } else {
-                    setData(currentEcts = 0);
-                }
-            }
-        });*/
-
         Button fab = (Button) findViewById(R.id.plusTweeTest);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

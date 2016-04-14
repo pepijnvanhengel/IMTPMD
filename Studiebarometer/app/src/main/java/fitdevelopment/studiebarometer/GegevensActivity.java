@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class GegevensActivity extends AppCompatActivity {
 
@@ -25,7 +26,15 @@ public class GegevensActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        String textNaam = sharedPreferences.getString("textNaam","");
+        String textNummer = sharedPreferences.getString("textNummer","");
 
+        EditText naam = (EditText) findViewById(R.id.naam);
+        naam.setText(textNaam);
+
+        EditText nummer = (EditText) findViewById(R.id.nummer);
+        nummer.setText(textNummer);
     }
 
 
@@ -37,7 +46,6 @@ public class GegevensActivity extends AppCompatActivity {
         EditText naam = (EditText) findViewById(R.id.naam);
         String textNaam = naam.getText().toString();
 
-
         EditText student = (EditText) findViewById(R.id.nummer);
         String textNummer = student.getText().toString();
 
@@ -48,10 +56,11 @@ public class GegevensActivity extends AppCompatActivity {
         if (student.getText().toString().trim().equals("")) {
             student.setError( "Studentnummer is vereist!" );
         }
-        else if (student.getText().toString().trim().length() != 8) {
+        else if (student.getText().toString().trim().length() != 7) {
             student.setError( "Ongeldig studentnummer!" );
         }
-        else {
+        else
+        {
             Intent intent = new Intent(this, MainActivity.class);
             /*intent.putExtra("textNaam", textNaam);
             intent.putExtra("textNummer", textNummer);

@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView studiepunten = (TextView)findViewById(R.id.punten);
-        studiepunten.setText("Behaalde studiepunten: " + ResultatenActivity.currentEcts);
+        studiepunten.setText("Behaalde studiepunten: " );
     }
 
     @Override
