@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal">
+    android:layout_gravity="center_horizontal"
+    android:padding="16dp">
 
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
@@ -11,15 +12,13 @@
     </com.github.mikephil.charting.charts.PieChart>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="+2"
+        android:text="Huidig advies"
         android:id="@+id/plusTweeTest"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="63dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginBottom="56dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

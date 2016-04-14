@@ -15,7 +15,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" Resultaten Overzicht"
+        android:text="Voortgang"
         android:id="@+id/resultaten"
         android:textColor="#fff"
         android:onClick="resultaten"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Vakken &amp; cijfers"
+        android:text="Courses"
         android:textColor="#fff"
         android:onClick="vakken"
         android:background="@color/colorPrimary"

@@ -19,7 +19,7 @@ public class Launcher extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         String textNummer = sharedPreferences.getString("textNummer","");
 
-        if(MainActivity.textNummer == "")
+        if(textNummer.equals(""))
         {
             Intent intent = new Intent(this,GegevensActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

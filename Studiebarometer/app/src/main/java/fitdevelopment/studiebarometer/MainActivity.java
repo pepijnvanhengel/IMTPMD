@@ -17,8 +17,7 @@ import fitdevelopment.studiebarometer.List.VakkenActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String textNaam;
-    public static String textNummer;
+    public static int periode;
 
 
 
@@ -45,28 +44,24 @@ public class MainActivity extends AppCompatActivity {
             studiejaar.setText("Jaar: " + studjaar);
         }
 
-
-
-
-
         //set huidige periode
         if (maand >= 9 && maand <= 11){
-            int periode = 1;
+            periode = 1;
             TextView semester = (TextView)findViewById(R.id.periode);
             semester.setText("Periode: " + periode);
         }
         else if (maand == 12 || maand == 1){
-            int periode = 2;
+            periode = 2;
             TextView semester = (TextView)findViewById(R.id.periode);
             semester.setText("Periode: " + periode);
         }
         else if (maand > 1 && maand < 5){
-            int periode = 3;
+            periode = 3;
             TextView semester = (TextView)findViewById(R.id.periode);
             semester.setText("Periode: " + periode);
         }
         else {
-            int periode = 4;
+            periode = 4;
             TextView semester = (TextView)findViewById(R.id.periode);
             semester.setText("Periode: " + periode);
         }
