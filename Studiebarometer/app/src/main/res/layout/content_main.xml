@@ -56,14 +56,14 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Naam:"
             android:paddingTop="16dp"
-            android:id="@+id/textView" />
+            android:id="@+id/naam" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Studentnummer:"
-            android:id="@+id/textView2"
+            android:id="@+id/nummer"
             android:layout_gravity="center_vertical" />
 
         <TextView

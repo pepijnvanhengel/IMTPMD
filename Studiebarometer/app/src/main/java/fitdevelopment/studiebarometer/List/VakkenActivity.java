@@ -102,12 +102,17 @@ public class VakkenActivity extends AppCompatActivity {
 
         mAdapter = new CourseListAdapter(VakkenActivity.this, 0, course);
         mListView.setAdapter(mAdapter);
+
+
     }
 
+<<<<<<< HEAD
     private void processRequestError(VolleyError error){
 
 
     }
 
+=======
+>>>>>>> origin/dev
 
 }
