@@ -65,7 +65,12 @@ public class VakkenActivity extends AppCompatActivity {
 
 
 
+
     }
+
+
+
+
 
     private void processRequestSucces(List<Course> subjects ){
         DatabaseHelper dbHelper = DatabaseHelper.getHelper(this);
@@ -102,9 +107,13 @@ public class VakkenActivity extends AppCompatActivity {
 
         mAdapter = new CourseListAdapter(VakkenActivity.this, 0, course);
         mListView.setAdapter(mAdapter);
+
+
     }
 
     private void processRequestError(VolleyError error){
 
     }
+
 }
+

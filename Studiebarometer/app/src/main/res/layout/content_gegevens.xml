@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:textColor="#fff"
-        android:text="Opslaan"
+        android:text="Doorgaan"
+        android:onClick="opslaan"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
