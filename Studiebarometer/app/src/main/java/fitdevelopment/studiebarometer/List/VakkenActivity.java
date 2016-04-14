@@ -1,6 +1,7 @@
 package fitdevelopment.studiebarometer.List;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -26,8 +27,10 @@ import java.util.List;
 
 
 import fitdevelopment.studiebarometer.Course;
+import fitdevelopment.studiebarometer.DetailActivity;
 import fitdevelopment.studiebarometer.GSON.GsonRequest;
 import fitdevelopment.studiebarometer.GSON.VolleyHelper;
+import fitdevelopment.studiebarometer.MainActivity;
 import fitdevelopment.studiebarometer.R;
 import fitdevelopment.studiebarometer.database.DatabaseHelper;
 import fitdevelopment.studiebarometer.database.DatabaseInfo;
@@ -86,8 +89,9 @@ public class VakkenActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                              @Override
                                              public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                                                 Toast t = Toast.makeText(VakkenActivity.this,"Click" + position, Toast.LENGTH_LONG);
-                                                 t.show();
+                                                 Intent intent = new Intent(VakkenActivity.this, DetailActivity.class);
+                                                 intent.putExtra("position", position);
+                                                 startActivity(intent);
                                              }
                                          }
         );

@@ -1,6 +1,8 @@
 package fitdevelopment.studiebarometer;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +23,8 @@ import com.github.mikephil.charting.data.PieDataSet;
 import java.util.ArrayList;
 
 import fitdevelopment.studiebarometer.List.VakkenActivity;
+import fitdevelopment.studiebarometer.database.DatabaseHelper;
+import fitdevelopment.studiebarometer.database.DatabaseInfo;
 
 
 public class ResultatenActivity extends AppCompatActivity {
@@ -48,7 +52,8 @@ public class ResultatenActivity extends AppCompatActivity {
         mChart.setTransparentCircleColor(Color.rgb(130, 130, 130));
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
 
-        setData(0);
+
+
 
         /*Button fab = (Button) findViewById(R.id.plusTweeTest);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +74,35 @@ public class ResultatenActivity extends AppCompatActivity {
                 startActivity(new Intent(ResultatenActivity.this, AdviesActivity.class));
             }
         });
+
+
+
+        for (int i = 1; i < 20; i++)
+        {
+            DatabaseHelper dbHelper = DatabaseHelper.getHelper(this);
+            Cursor rs = dbHelper.query(DatabaseInfo.CourseTables.Course, new String[]{"*"}, null, null, null, null, null);
+            rs.move(i);
+
+            String cijfer = (String) rs.getString(rs.getColumnIndex("grade"));
+            String ects = (String) rs.getString(rs.getColumnIndex("ects"));
+            String name = (String) rs.getString(rs.getColumnIndex("name"));
+
+            System.out.println("Naam:"+name);
+            System.out.println("CijferVoorVak:"+cijfer);
+            System.out.println("Ects bij dit vak:"+ects);
+
+            int punten = Integer.parseInt(ects);
+            int deelcijfer = Integer.parseInt(cijfer);
+
+                if (deelcijfer >= 1 && currentEcts < 60)
+                {
+                    currentEcts += punten;
+                    System.out.println("CurrentEcts:"+currentEcts);
+                }
+
+        }
+
+        setData(currentEcts);
 
     }
 

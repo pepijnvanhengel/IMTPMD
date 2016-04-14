@@ -8,4 +8,6 @@
     <string name="title_activity_gegevens">Mijn gegevens</string>
     <string name="title_activity_advies">Huidig advies</string>
     <string name="title_course_list_activity">Courses</string>
+    <string name="title_activity_detail">Detail</string>
+
 </resources>

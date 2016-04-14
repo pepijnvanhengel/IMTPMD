@@ -39,7 +39,14 @@
             android:name=".GegevensActivity"
             android:label="@string/title_activity_gegevens"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AdviesActivity"></activity>
+        <activity android:name=".AdviesActivity" />
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme.NoActionBar"
+        />
+
+
     </application>
 
 </manifest>
