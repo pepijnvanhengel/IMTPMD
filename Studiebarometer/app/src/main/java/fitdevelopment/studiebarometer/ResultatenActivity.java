@@ -1,5 +1,6 @@
 package fitdevelopment.studiebarometer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,8 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 
 import java.util.ArrayList;
+
+import fitdevelopment.studiebarometer.List.VakkenActivity;
 
 
 public class ResultatenActivity extends AppCompatActivity {
@@ -45,9 +48,9 @@ public class ResultatenActivity extends AppCompatActivity {
         mChart.setTransparentCircleColor(Color.rgb(130, 130, 130));
         mChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
 
-        setData(currentEcts = 50);
+        setData(0);
 
-        Button fab = (Button) findViewById(R.id.plusTweeTest);
+        /*Button fab = (Button) findViewById(R.id.plusTweeTest);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +59,14 @@ public class ResultatenActivity extends AppCompatActivity {
                 } else {
                     setData(currentEcts = 0);
                 }
+            }
+        });*/
+
+        Button fab = (Button) findViewById(R.id.plusTweeTest);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ResultatenActivity.this, AdviesActivity.class));
             }
         });
 

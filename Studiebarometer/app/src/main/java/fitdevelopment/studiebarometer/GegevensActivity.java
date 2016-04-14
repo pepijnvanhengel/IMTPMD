@@ -48,6 +48,9 @@ public class GegevensActivity extends AppCompatActivity {
         if (student.getText().toString().trim().equals("")) {
             student.setError( "Studentnummer is vereist!" );
         }
+        else if (student.getText().toString().trim().length() != 8) {
+            student.setError( "Ongeldig studentnummer!" );
+        }
         else {
             Intent intent = new Intent(this, MainActivity.class);
             /*intent.putExtra("textNaam", textNaam);
