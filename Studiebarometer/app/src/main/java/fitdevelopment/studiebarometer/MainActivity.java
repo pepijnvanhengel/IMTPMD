@@ -1,6 +1,8 @@
 package fitdevelopment.studiebarometer;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +16,9 @@ import java.util.Calendar;
 import fitdevelopment.studiebarometer.List.VakkenActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static String textNaam;
+    public static String textNummer;
 
 
 
@@ -65,6 +70,22 @@ public class MainActivity extends AppCompatActivity {
             TextView semester = (TextView)findViewById(R.id.periode);
             semester.setText("Periode: " + periode);
         }
+
+        /*Intent intent = getIntent();
+        textNaam = getIntent().getExtras().getString("textNaam");
+        textNummer = getIntent().getExtras().getString("textNummer");*/
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        String textNaam = sharedPreferences.getString("textNaam","");
+        String textNummer = sharedPreferences.getString("textNummer","");
+
+        TextView naam = (TextView)findViewById(R.id.naam);
+        naam.setText("Naam: " + textNaam);
+
+        TextView nummer = (TextView)findViewById(R.id.nummer);
+        nummer.setText("Studentnummer: s" + textNummer);
+
+
 
 
 

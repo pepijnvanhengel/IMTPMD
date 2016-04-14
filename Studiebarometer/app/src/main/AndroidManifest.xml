@@ -15,13 +15,17 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Splash"
-            android:label="splash screen">
+            android:label="Studie barometer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 >
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Launcher"
+            android:label="Launcher"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".List.VakkenActivity"
             android:label="@string/title_course_list_activity"

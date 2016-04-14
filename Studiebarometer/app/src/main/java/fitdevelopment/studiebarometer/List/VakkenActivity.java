@@ -49,5 +49,9 @@ public class VakkenActivity extends AppCompatActivity {
 
         mAdapter = new CourseListAdapter(VakkenActivity.this, 0, courseModels);
         mListView.setAdapter(mAdapter);
+
+
     }
+
+
 }
