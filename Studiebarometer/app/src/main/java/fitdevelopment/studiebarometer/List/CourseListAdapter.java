@@ -30,20 +30,17 @@ public class CourseListAdapter extends ArrayAdapter<Course> {
             LayoutInflater li = LayoutInflater.from(getContext());
             convertView = li.inflate(R.layout.view_content_row, parent, false);
             vh.name = (TextView) convertView.findViewById(R.id.subject_name);
-            vh.code = (TextView) convertView.findViewById(R.id.subject_code);
             convertView.setTag(vh);
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
         Course cm = getItem(position);
         vh.name.setText(cm.name);
-        vh.code.setText(cm.ects);
         return convertView;
     }
 
     private static class ViewHolder {
         TextView name;
-        TextView code;
 
     }
 }

@@ -11,13 +11,18 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.util.List;
 import java.util.Map;
+
+import fitdevelopment.studiebarometer.Course;
 
 public class GsonRequest<T> extends Request<T> {
     private final Gson gson = new Gson();
@@ -72,4 +77,6 @@ public class GsonRequest<T> extends Request<T> {
             return Response.error(new ParseError(e));
         }
     }
+
+
 }
