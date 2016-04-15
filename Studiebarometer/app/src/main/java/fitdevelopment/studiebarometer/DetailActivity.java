@@ -73,6 +73,10 @@ public class DetailActivity extends AppCompatActivity {
 
         System.out.println("Nieuw cijfer: " + setCijfer);
 
+        Cursor rs = dbHelper.query(DatabaseInfo.CourseTables.Course, new String[]{"*"}, null, null, null, null, null);
+        String grade = (String) rs.getString(rs.getColumnIndex("grade"));
+
+        System.out.println("WAAAAAAAAAAAAAAAAAAAAAAAATTTT" + grade);
 
 
     }
