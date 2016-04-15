@@ -30,6 +30,7 @@ import fitdevelopment.studiebarometer.Course;
 import fitdevelopment.studiebarometer.DetailActivity;
 import fitdevelopment.studiebarometer.GSON.GsonRequest;
 import fitdevelopment.studiebarometer.GSON.VolleyHelper;
+import fitdevelopment.studiebarometer.GegevensActivity;
 import fitdevelopment.studiebarometer.MainActivity;
 import fitdevelopment.studiebarometer.R;
 import fitdevelopment.studiebarometer.database.DatabaseHelper;
@@ -121,14 +122,8 @@ public class VakkenActivity extends AppCompatActivity {
     //terug naar vorige activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                this.finish();
-                return true;
-            default:
+        startActivity(new Intent(this, MainActivity.class));
                 return super.onOptionsItemSelected(item);
         }
-    }
 }
 

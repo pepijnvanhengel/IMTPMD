@@ -3,6 +3,7 @@ package fitdevelopment.studiebarometer;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,10 +15,14 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 import fitdevelopment.studiebarometer.List.VakkenActivity;
+import fitdevelopment.studiebarometer.database.DatabaseHelper;
+import fitdevelopment.studiebarometer.database.DatabaseInfo;
 
 public class MainActivity extends AppCompatActivity {
 
     public static int periode;
+    public static int currentEcts = 0;
+
 
 
 
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //haal maand en jaar op
         int jaar = Calendar.getInstance().get(Calendar.YEAR);
         int maand =  Calendar.getInstance().get(Calendar.MONTH);
+        currentEcts = 0;
 
         //set huidige jaar
         if (maand > 0 && maand < 9){
@@ -80,13 +86,39 @@ public class MainActivity extends AppCompatActivity {
         TextView nummer = (TextView)findViewById(R.id.nummer);
         nummer.setText("Studentnummer: s" + textNummer);
 
+        for (int i = 1; i < 20; i++)
+        {
+            DatabaseHelper dbHelper = DatabaseHelper.getHelper(this);
+            Cursor rs = dbHelper.query(DatabaseInfo.CourseTables.Course, new String[]{"*"}, null, null, null, null, null);
+            rs.move(i);
+
+
+            String cijfer = (String) rs.getString(rs.getColumnIndex("grade"));
+            String ects = (String) rs.getString(rs.getColumnIndex("ects"));
+            String name = (String) rs.getString(rs.getColumnIndex("name"));
+
+            System.out.println("Naam:"+name);
+            System.out.println("CijferVoorVak:"+cijfer);
+            System.out.println("Ects bij dit vak:"+ects);
+
+            int punten = Integer.parseInt(ects);
+            int deelcijfer = Integer.parseInt(cijfer);
+
+            if (deelcijfer >= 5.5 && currentEcts < 60)
+            {
+                currentEcts += punten;
+                System.out.println("CurrentEcts:"+currentEcts);
+            }
+
+        }
+
 
 
 
 
 
         TextView studiepunten = (TextView)findViewById(R.id.punten);
-        studiepunten.setText("Behaalde studiepunten: " );
+        studiepunten.setText("Behaalde studiepunten: "+ currentEcts);
     }
 
     @Override

@@ -30,7 +30,6 @@ import fitdevelopment.studiebarometer.database.DatabaseInfo;
 public class ResultatenActivity extends AppCompatActivity {
 
     private PieChart mChart;
-    public static final int MAX_ECTS = 60;
     public static int currentEcts = 0;
 
 
@@ -61,33 +60,8 @@ public class ResultatenActivity extends AppCompatActivity {
         });
 
 
+        setData(MainActivity.currentEcts);
 
-        for (int i = 1; i < 20; i++)
-        {
-            DatabaseHelper dbHelper = DatabaseHelper.getHelper(this);
-            Cursor rs = dbHelper.query(DatabaseInfo.CourseTables.Course, new String[]{"*"}, null, null, null, null, null);
-            rs.move(i);
-
-            String cijfer = (String) rs.getString(rs.getColumnIndex("grade"));
-            String ects = (String) rs.getString(rs.getColumnIndex("ects"));
-            String name = (String) rs.getString(rs.getColumnIndex("name"));
-
-            System.out.println("Naam:"+name);
-            System.out.println("CijferVoorVak:"+cijfer);
-            System.out.println("Ects bij dit vak:"+ects);
-
-            int punten = Integer.parseInt(ects);
-            int deelcijfer = Integer.parseInt(cijfer);
-
-                if (deelcijfer >= 1 && currentEcts < 60)
-                {
-                    currentEcts += punten;
-                    System.out.println("CurrentEcts:"+currentEcts);
-                }
-
-        }
-
-        setData(currentEcts);
 
     }
 

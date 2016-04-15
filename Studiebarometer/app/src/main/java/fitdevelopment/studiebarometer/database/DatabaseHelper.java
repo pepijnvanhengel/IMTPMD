@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
+import fitdevelopment.studiebarometer.Course;
+
 /**
  * Created by Billy on 12-4-2016.
  */
@@ -72,6 +74,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor query(String table, String[] columns, String selection, String[] selectArgs, String groupBy, String having, String orderBy)
     {
         return mSQLDB.query(table, columns, selection, selectArgs, groupBy, having, orderBy);
+    }
+
+    public void updateRow(String name, String ects, String grade, String period, int position) {
+        ContentValues args = new ContentValues();
+        args.put(DatabaseInfo.CourseColumn.NAME, name);
+        args.put(DatabaseInfo.CourseColumn.PERIOD, period);
+        args.put(DatabaseInfo.CourseColumn.ECTS, ects);
+        args.put(DatabaseInfo.CourseColumn.GRADE, grade);
+
+        mSQLDB.update(DatabaseInfo.CourseTables.Course, args, DatabaseInfo.CourseColumn.NAME + "=" + "'"+name+"'", null);
     }
 
 
