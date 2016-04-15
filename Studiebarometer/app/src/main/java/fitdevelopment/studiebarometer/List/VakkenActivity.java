@@ -40,7 +40,8 @@ public class VakkenActivity extends AppCompatActivity {
 
     private ListView mListView;
     private CourseListAdapter mAdapter;
-    private List<Course> course = new ArrayList<>();    // NEED A METHOD TO FILL THIS. RETRIEVE THE DATA FROM JSON
+    private List<Course> course = new ArrayList<>();
+    public static int test = 0;// NEED A METHOD TO FILL THIS. RETRIEVE THE DATA FROM JSON
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class VakkenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vakken);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        test =1;
 
         requestSubjects();
 

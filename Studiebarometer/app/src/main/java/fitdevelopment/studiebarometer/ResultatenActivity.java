@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -62,6 +63,8 @@ public class ResultatenActivity extends AppCompatActivity {
 
         setData(MainActivity.currentEcts);
 
+        TextView punten = (TextView)findViewById(R.id.puntenteller);
+        punten.setText(currentEcts + "");
 
     }
 
@@ -78,12 +81,10 @@ public class ResultatenActivity extends AppCompatActivity {
 
         //  http://www.materialui.co/colors
         ArrayList<Integer> colors = new ArrayList<>();
-        if (currentEcts <10) {
-            colors.add(Color.rgb(244,81,30));
-        } else if (currentEcts < 40){
-            colors.add(Color.rgb(235,0,0));
+       if (currentEcts < 40){
+            colors.add(Color.rgb(255,102,0));
         } else if  (currentEcts < 50) {
-            colors.add(Color.rgb(253,216,53));
+            colors.add(Color.rgb(255,255,0));
         } else {
             colors.add(Color.rgb(67,160,71));
         }

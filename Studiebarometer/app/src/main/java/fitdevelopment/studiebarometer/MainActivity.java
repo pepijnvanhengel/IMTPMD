@@ -86,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         TextView nummer = (TextView)findViewById(R.id.nummer);
         nummer.setText("Studentnummer: s" + textNummer);
 
-        for (int i = 1; i < 20; i++)
-        {
+        if (VakkenActivity.test == 1) {
+        for (int i = 1; i < 20; i++) {
             DatabaseHelper dbHelper = DatabaseHelper.getHelper(this);
             Cursor rs = dbHelper.query(DatabaseInfo.CourseTables.Course, new String[]{"*"}, null, null, null, null, null);
             rs.move(i);
@@ -97,18 +97,18 @@ public class MainActivity extends AppCompatActivity {
             String ects = (String) rs.getString(rs.getColumnIndex("ects"));
             String name = (String) rs.getString(rs.getColumnIndex("name"));
 
-            System.out.println("Naam:"+name);
-            System.out.println("CijferVoorVak:"+cijfer);
-            System.out.println("Ects bij dit vak:"+ects);
+            System.out.println("Naam:" + name);
+            System.out.println("CijferVoorVak:" + cijfer);
+            System.out.println("Ects bij dit vak:" + ects);
 
             int punten = Integer.parseInt(ects);
-            int deelcijfer = Integer.parseInt(cijfer);
+            double deelcijfer = Double.parseDouble(cijfer);
 
-            if (deelcijfer >= 5.5 && currentEcts < 60)
-            {
+            if (deelcijfer >= 5.5 && currentEcts < 60) {
                 currentEcts += punten;
-                System.out.println("CurrentEcts:"+currentEcts);
+                System.out.println("CurrentEcts:" + currentEcts);
             }
+        }
 
         }
 
