@@ -13,10 +13,12 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Splash"
-            android:label="Studie barometer">
+            android:label="Studie barometer"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 >
@@ -26,23 +28,28 @@
         <activity
             android:name=".Launcher"
             android:label="Launcher"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".List.VakkenActivity"
             android:label="@string/title_course_list_activity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ResultatenActivity"
             android:label="@string/title_activity_resultaten"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GegevensActivity"
             android:label="@string/title_activity_gegevens"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdviesActivity" />
         <activity
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
         />
 
