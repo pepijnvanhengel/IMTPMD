@@ -14,7 +14,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Huidig advies"
+        android:text="@string/knop_advies"
         android:id="@+id/plusTweeTest"
         android:textColor="#fff"
         android:background="@color/colorPrimary"
@@ -28,7 +28,6 @@
         android:id="@+id/puntenteller"
         android:textSize="50sp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text="50" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

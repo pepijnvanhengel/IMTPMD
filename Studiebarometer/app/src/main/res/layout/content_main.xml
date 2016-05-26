@@ -15,7 +15,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voortgang"
+        android:text="@string/voortgang"
         android:id="@+id/resultaten"
         android:textColor="#fff"
         android:onClick="resultaten"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Courses"
+        android:text="@string/courses"
         android:textColor="#fff"
         android:onClick="vakken"
         android:background="@color/colorPrimary"
@@ -54,7 +54,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Naam:"
             android:paddingTop="16dp"
             android:id="@+id/naam" />
 
@@ -62,7 +61,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Studentnummer:"
             android:id="@+id/nummer"
             android:layout_gravity="center_vertical" />
 
@@ -70,21 +68,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Jaar:"
             android:id="@+id/jaar" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Periode:"
             android:id="@+id/periode" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Behaalde studiepunten:"
             android:id="@+id/punten" />
     </LinearLayout>
 

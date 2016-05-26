@@ -35,7 +35,6 @@ public class DetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         position = getIntent().getExtras().getInt("position");
-        System.out.println(position);
         position++;
 
         DatabaseHelper dbHelper = DatabaseHelper.getHelper(this);
@@ -81,14 +80,9 @@ public class DetailActivity extends AppCompatActivity {
         EditText cijfer = (EditText) findViewById(R.id.editTextGrade);
         String setCijfer = cijfer.getText().toString();
 
-
         dbHelper.updateRow(name, ects, setCijfer, period, position);
 
-
         rs.move(position);
-
-        System.out.println(setCijfer);
-        System.out.println(grade);
 
         Snackbar snackbar = Snackbar
                 .make(v, "Cijfer opgeslagen", Snackbar.LENGTH_LONG);

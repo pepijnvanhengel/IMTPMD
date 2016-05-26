@@ -87,7 +87,6 @@ public class VakkenActivity extends AppCompatActivity {
             values.put(DatabaseInfo.CourseColumn.GRADE,c.getGrade());
             values.put(DatabaseInfo.CourseColumn.PERIOD,c.getPeriod());
             dbHelper.insert(DatabaseInfo.CourseTables.Course, null, values);
-            System.out.println(c.getCourseName());
         }
         mListView = (ListView) findViewById(R.id.my_list_view);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

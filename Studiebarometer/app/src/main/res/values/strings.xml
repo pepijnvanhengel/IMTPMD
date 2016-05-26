@@ -1,13 +1,38 @@
 <resources>
     <string name="app_name">Studiebarometer</string>
-    <string name="naam">Naam</string>
-    <string name="studentnummer">Studentnummer</string>
-    <string name="action_gegevens">Mijn gegevens</string>
+
+
+
+    <!-- titel strings -->
     <string name="title_activity_vakken">Course List</string>
     <string name="title_activity_resultaten">Resultaten</string>
     <string name="title_activity_gegevens">Mijn gegevens</string>
     <string name="title_activity_advies">Huidig advies</string>
     <string name="title_course_list_activity">Courses</string>
     <string name="title_activity_detail">Detail</string>
+
+    <!-- content gegevens strings -->
+    <string name="doorgaan_knop">Opslaan</string>
+    <string name="naam">Naam</string>
+    <string name="studentnummer">Studentnummer</string>
+    <string name="action_gegevens">Mijn gegevens</string>
+    <string name="invullen">Vul je gegevens in.</string>
+
+    <!-- content detail strings -->
+    <string name="opslaan_knop">Opslaan</string>
+    <string name="laagste_cijfer">1</string>
+    <string name="hoogste_cijfer">Hoogst behaalde cijfer</string>
+    <string name="periode">Periode</string>
+    <string name="ects">ECTS</string>
+
+    <!-- content main strings -->
+    <string name="voortgang">Voortgang</string>
+    <string name="courses">Courses</string>
+
+    <!-- content resultaten strings -->
+    <string name="knop_advies">Voortgang</string>
+
+
+
 
 </resources>

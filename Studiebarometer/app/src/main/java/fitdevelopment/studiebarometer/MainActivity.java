@@ -72,10 +72,6 @@ public class MainActivity extends AppCompatActivity {
             semester.setText("Periode: " + periode);
         }
 
-        /*Intent intent = getIntent();
-        textNaam = getIntent().getExtras().getString("textNaam");
-        textNummer = getIntent().getExtras().getString("textNummer");*/
-
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         String textNaam = sharedPreferences.getString("textNaam","");
         String textNummer = sharedPreferences.getString("textNummer","");
@@ -97,16 +93,11 @@ public class MainActivity extends AppCompatActivity {
             String ects = (String) rs.getString(rs.getColumnIndex("ects"));
             String name = (String) rs.getString(rs.getColumnIndex("name"));
 
-            System.out.println("Naam:" + name);
-            System.out.println("CijferVoorVak:" + cijfer);
-            System.out.println("Ects bij dit vak:" + ects);
-
             int punten = Integer.parseInt(ects);
             double deelcijfer = Double.parseDouble(cijfer);
 
             if (deelcijfer >= 5.5 && currentEcts < 60) {
                 currentEcts += punten;
-                System.out.println("CurrentEcts:" + currentEcts);
             }
         }
 
